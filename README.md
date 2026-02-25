@@ -1,10 +1,11 @@
-# ubisam-semina
+# Ubisam-Semina
 유비샘 세미나 자료 정리용 리포지토리입니다.
 
 ## 자료 모음
 
 - [[20260203] 유비샘_1차_세미나.pdf]([20260203]%20유비샘_1차_세미나.pdf)
 - [[20260210] 유비샘_2차_세미나.pdf]([20260210]%20유비샘_2차_세미나.pdf)
+- [[20260224] 유비샘_3차_세미나.pdf]([20260224]%20유비샘_3차_세미나.pdf)
 
 ## 세미나 정리
 
@@ -129,5 +130,41 @@ COC 개념과 패키지 구조 적용, 리팩토링 의미를 정리합니다.
 Settings에서 Wiki/Discussion 활성화, Discussion 화면 확인을 안내합니다.
 Wiki 작성, 위키 주소 복사, README 편집과 Markdown 링크 문법을 설명합니다.
 커밋 메시지 입력 후 README 반영 확인까지 정리합니다.
+
+---
+
+### 3차 세미나 (2026-02-24)
+
+- 주제: Docker를 활용한 데이터베이스 컨테이너 실습 및 VS Code 연동
+- 상세 PDF: [[20260224] 유비샘_3차_세미나.pdf]([20260224]%20유비샘_3차_세미나.pdf)
+
+자세한 내용은 PDF를 참고해주세요.
+
+#### Docker 이미지 다운로드 및 컨테이너 실행
+
+MySQL, PostgreSQL, MSSQL, MariaDB 등 다양한 DB의 공식 Docker 이미지를 다운로드하고 컨테이너를 실행하는 방법을 실습합니다.
+각 DB별 환경변수, 포트, 볼륨 마운트 설정 예시와 실행 명령어를 정리합니다.
+
+#### VS Code에서 DB 연결 및 쿼리 테스트
+
+VS Code 확장(Database Client, Container 등) 설치 후, JDBC 연결 설정 및 쿼리 테스트 방법을 안내합니다.
+application.properties 예시와 각 DB별 설정값을 비교합니다.
+
+#### pom.xml 의존성 및 Maven 설정
+
+각 DB별 JDBC 드라이버 의존성 추가 방법과 Maven repository 설정, settings.xml 작성법을 설명합니다.
+
+#### JPA 테스트 및 CRUD 코드 예시
+
+MockMvc를 활용한 웹 요청 테스트 코드(Create, Read, Update, Delete) 작성 흐름을 공유합니다.
+엔티티 저장 시 ID 자동 생성, 단일 값 조회/수정/삭제 예시를 설명합니다.
+
+#### 핸들러 구현 및 이벤트 처리
+
+@HandleBeforeCreate, @HandleAfterCreate 어노테이션을 활용한 RepositoryEventHandler 구현 및 테스트 방법을 안내합니다.
+
+#### 기타 개념 및 참고 자료
+
+Spring DI, TDD, AOP 등 핵심 개념을 간략히 정리하고, 관련 GitHub 소스 및 참고 링크를 안내합니다.
 
 ---
