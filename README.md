@@ -424,4 +424,56 @@ docker compose -f Dockerfile-dev.yml up -d
 
 ---
 
+### 7차 세미나 (2026-03-24)
+
+- 주제: Boilerplate Backend/Frontend 실습 및 OAuth2/Google 로그인, Docker Compose를 활용한 통합 개발환경 구축
+- 상세 PDF: [[20260324] 유비샘_7차_세미나.pdf]([20260324]%20유비샘_7차_세미나.pdf)
+
+자세한 내용은 PDF를 참고해주세요.
+
+---
+
+#### Boilerplate Backend/Frontend 실습
+  - 두 리포지토리 클론 후 각각 backend는 `./mvnw package`, frontend는 `npm install && npm run build.frontend`로 빌드
+  - 각 디렉터리에서 Docker 이미지 생성: backend/ `docker build ...backend...`, frontend/ `docker build ...frontend...`
+  - Docker Compose(`Dockerfile-run.yml`)로 인증서버, MQ, backend, frontend 등 6개 컨테이너 일괄 실행
+  - 서비스별 포트: 프론트(3000), 인증서버(9020), stomp-server(9030) 등
+
+---
+
+---
+
+#### OAuth2/Google 로그인 실습
+  - 인증서버(oauth2-web)에서 Google OAuth client-id/secret 환경변수 추가로 구글 로그인 연동
+  - 토큰 발급 후 stomp-server에 access_token으로 인증
+  - 인증서버에서 부여한 admin 권한은 리소스 서버(프론트)에는 자동 적용되지 않음 (권한 분리 개념 강조)
+
+---
+
+---
+
+#### Backend/Frontend 코드 구조
+  - Backend: 공통 엔티티 상속, ManyToOne/ManyToMany/ElementCollection 등 다양한 JPA 매핑 실습
+  - Frontend: assets로 서버 주소 관리, accounts 폴더로 OAuth2 클라이언트 구현, items.vue 등 실습
+
+---
+
+---
+
+#### 오류 해결법
+  - .m2/settings.xml에 github repository 설정, 필요시 캐시 폴더 삭제 후 재설치
+  - backend는 `./mvnw clean install`, frontend는 `npm install`로 의존성 재설치
+
+---
+
+---
+
+#### 실습 전체 흐름
+  1. 코드 클론 및 의존성 설치
+  2. 각각 빌드 및 Docker 이미지 생성
+  3. Docker Compose로 통합 환경 실행
+  4. 각 서비스별 웹 UI/기능 확인 및 OAuth2/Google 로그인 테스트
+  5. 권한 분리, JPA 매핑, 실습 오류 해결법 등 실전 위주 학습
+
+---
 
